@@ -39,10 +39,10 @@ def scrape_amazon_product_data(url):
      
         ratings = soup.find("span", {"class": "a-icon-alt"}).get_text()
         mrp = soup.find("span", attrs={"class": "a-offscreen"}).get_text().strip()
-        #ratings = soup.find("span", attrs={"class": "a-size-base a-color-base"}).get_text().strip()
-        #ratings = soup.select('a-size-base a-color-base')[0].get_text().split(' ')[0].replace(".", "")
+        ratings = soup.find("span", attrs={"class": "a-icon-alt"}).get_text().strip()
         #asin = soup.find("span", {"id": "ASIN"}).get_text()
         review_count = soup.select('#acrCustomerReviewText')[0].get_text().split(' ')[0].replace(".", "")
+        
         
         #common_containers = soup.findAll("li", {"class":"s-result-item celwidget "})
 
